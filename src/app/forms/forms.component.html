@@ -1,0 +1,28 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email">
+      <div *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').touched">
+        Некорректный email
+      </div>
+    </div>
+  
+    <div>
+      <label for="dob">Дата рождения:</label>
+      <input id="dob" formControlName="dob" type="date">
+      <div *ngIf="registrationForm.get('dob').invalid && registrationForm.get('dob').touched">
+        Дата рождения обязательна
+      </div>
+    </div>
+  
+    <div>
+      <label for="name">Имя:</label>
+      <input id="name" formControlName="name" type="text">
+      <div *ngIf="registrationForm.get('name').invalid && registrationForm.get('name').touched">
+        Имя обязательно
+      </div>
+    </div>
+  
+    <button type="submit">Отправить</button>
+  </form>
+  
